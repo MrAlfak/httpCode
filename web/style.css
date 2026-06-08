@@ -171,6 +171,18 @@ footer {
     color: var(--muted);
 }
 
+/* RTL-specific styles */
+[dir="rtl"] .card .code {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .card .mdn-link::before {
+    content: "&larr; ";
+}
+[dir="rtl"] .card .mdn-link::after {
+    content: "";
+}
+
 @media (max-width: 600px) {
     .controls {
         flex-direction: column;

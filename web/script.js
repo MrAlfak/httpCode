@@ -4,6 +4,9 @@ const resultsEl = document.getElementById('results');
 const searchEl = document.getElementById('search');
 const langSelect = document.getElementById('lang-select');
 
+// List of RTL language codes
+const rtlLanguages = ['ar', 'fa', 'he', 'ur', 'ps', 'sd', 'ug', 'yi'];
+
 // Initial load
 async function init() {
     try {
@@ -25,6 +28,10 @@ async function loadTranslations(lang) {
         console.warn(`Could not load translations for ${lang}:`, err);
         translations = {};
     }
+    
+    // Update HTML lang and dir attributes
+    document.documentElement.lang = lang;
+    document.documentElement.dir = rtlLanguages.includes(lang) ? 'rtl' : 'ltr';
 }
 
 // Render the grid
@@ -45,6 +52,7 @@ function render() {
         const codeStr = String(c.code);
         const phrase = translations[codeStr]?.phrase || c.phrase;
         const desc = translations[codeStr]?.description || c.description;
+        const isRTL = document.documentElement.dir === 'rtl';
         
         const card = document.createElement('article');
         card.className = 'card';
@@ -52,6 +60,7 @@ function render() {
         card.setAttribute('aria-label', `HTTP ${c.code}: ${phrase}`);
         
         const badgeClass = `badge-${c.class.substring(0, 3)}`;
+        const arrow = isRTL ? '&larr;' : '&rarr;';
         
         card.innerHTML = `
             <div class="code">
@@ -60,7 +69,7 @@ function render() {
             </div>
             <h2 class="phrase">${phrase}</h2>
             <p class="description">${desc}</p>
-            ${c.mdn_link ? `<a href="${c.mdn_link}" target="_blank" rel="noopener noreferrer" class="mdn-link">Read MDN Docs &rarr;</a>` : ''}
+            ${c.mdn_link ? `<a href="${c.mdn_link}" target="_blank" rel="noopener noreferrer" class="mdn-link">Read MDN Docs ${arrow}</a>` : ''}
         `;
         resultsEl.appendChild(card);
     });
