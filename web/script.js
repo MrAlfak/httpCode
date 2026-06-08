@@ -7,7 +7,7 @@ const langSelect = document.getElementById('lang-select');
 // Initial load
 async function init() {
     try {
-        const response = await fetch('../codes.json');
+        const response = await fetch('/codes.json');
         codes = await response.json();
         await loadTranslations('en'); // Default to English
         render();
@@ -19,7 +19,7 @@ async function init() {
 // Load translations for selected language
 async function loadTranslations(lang) {
     try {
-        const response = await fetch(`../i18n/${lang}.json`);
+        const response = await fetch(`/i18n/${lang}.json`);
         translations = await response.json();
     } catch (err) {
         console.warn(`Could not load translations for ${lang}:`, err);
@@ -46,19 +46,21 @@ function render() {
         const phrase = translations[codeStr]?.phrase || c.phrase;
         const desc = translations[codeStr]?.description || c.description;
         
-        const card = document.createElement('div');
+        const card = document.createElement('article');
         card.className = 'card';
+        card.setAttribute('role', 'article');
+        card.setAttribute('aria-label', `HTTP ${c.code}: ${phrase}`);
         
         const badgeClass = `badge-${c.class.substring(0, 3)}`;
         
         card.innerHTML = `
             <div class="code">
-                ${c.code}
+                HTTP ${c.code}
                 <span class="badge ${badgeClass}">${c.class.split(' ')[0]}</span>
             </div>
-            <div class="phrase">${phrase}</div>
-            <div class="description">${desc}</div>
-            ${c.mdn_link ? `<a href="${c.mdn_link}" target="_blank" class="mdn-link">Read MDN Docs &rarr;</a>` : ''}
+            <h2 class="phrase">${phrase}</h2>
+            <p class="description">${desc}</p>
+            ${c.mdn_link ? `<a href="${c.mdn_link}" target="_blank" rel="noopener noreferrer" class="mdn-link">Read MDN Docs &rarr;</a>` : ''}
         `;
         resultsEl.appendChild(card);
     });

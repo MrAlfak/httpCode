@@ -1,0 +1,15 @@
+{
+  "name": "github-httpcode",
+  "version": "1.0.0",
+  "description": "Comprehensive reference for HTTP status codes",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node build.js"
+  },
+  "keywords": ["http", "status-codes"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -11,10 +11,12 @@
     <header>
         <div class="container">
             <h1>HTTP Status Codes</h1>
-            <p>Comprehensive reference for developers in 14+ languages</p>
+            <p>Comprehensive reference for developers in 100+ languages</p>
             <div class="controls">
-                <input type="text" id="search" placeholder="Search by code or keyword...">
-                <select id="lang-select">
+                <label for="search" class="visually-hidden">Search by code or keyword</label>
+                <input type="text" id="search" placeholder="Search by code or keyword..." aria-label="Search HTTP status codes">
+                <label for="lang-select" class="visually-hidden">Select language</label>
+                <select id="lang-select" aria-label="Select language">
                     <option value="en">English (EN)</option>
                     <option value="fa">Persian (FA)</option>
                     <option value="ar">Arabic (AR)</option>

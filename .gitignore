@@ -1,11 +1,6 @@
-# Python
+node_modules/
+dist/
+.DS_Store
+*.log
 __pycache__/
-*.py[cod]
-*$py.class
-
-# IDE
-.vscode/
-.idea/
-
-# Data
-.env
+*.pyc
