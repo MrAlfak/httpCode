@@ -1,0 +1,26 @@
+name: Publish v2.0.0
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create v2.0.0 release if missing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v2.0.0 >/dev/null 2>&1; then
+            echo "v2.0.0 already exists"
+            exit 0
+          fi
+          gh release create v2.0.0 \
+            --target "$GITHUB_SHA" \
+            --title "httpCode v2.0.0" \
+            --generate-notes
