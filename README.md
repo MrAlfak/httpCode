@@ -1,67 +1,42 @@
 # HTTP Status Codes (Standard & Unofficial)
 
-A comprehensive reference for HTTP status codes, including standard IETF codes and unofficial codes used by major platforms like Cloudflare, Nginx, AWS, and Laravel.
+A developer reference for HTTP status codes with separated standard (IANA/RFC) and vendor-specific meanings.
 
-## 🚀 Features
+## v2 improvements
 
-- **Standard Codes**: All 63 codes defined in RFCs (100 to 511).
-- **Unofficial Codes**: 20+ codes from Cloudflare, Nginx, AWS, Microsoft IIS, Twitter, Shopify, and Laravel.
-- **CLI Tool**: A simple Python script to search and filter codes quickly.
-- **Reference Links**: Direct MDN links for all standard codes.
-- **Developer-Friendly**: Data stored in a clean `codes.json` format.
-- **i18n Support**: Descriptions available in 100+ languages (Global coverage including EN, FA, ZH, ES, HI, AR, RU, JA, PT, DE, FR, TR, IT, KO, VI, etc.).
-- **Guides**: Multi-language guides available in `i18n/guides/`.
-- **Exporting**: Export search results to JSON, CSV, or Markdown via CLI.
-- **Web UI**: Modern, beautiful web interface to explore codes in your browser.
+- Standard and vendor codes are modeled separately.
+- Vendor collisions (for example Cloudflare/Nginx/AWS codes) are handled with provider namespaces.
+- Dataset validation schema is available in `schema/http-code.schema.json`.
+- Translation coverage is tracked instead of assuming every language has full coverage.
 
-## 🛠 Usage
+## Features
 
-### Web Interface
+- Standard HTTP status reference.
+- Unofficial platform codes.
+- CLI search and export.
+- Web explorer.
+- Multi-language support.
+- Developer-friendly JSON datasets.
 
-Simply open `web/index.html` in your browser to explore the codes with a modern UI.
+## Development
 
-### Using the CLI Tool
-
-You can search by code, keyword, filter by class, or export results.
+Run the web server instead of opening HTML directly:
 
 ```bash
-# List supported languages
-python httpcode.py --list-langs
-
-# Search by specific code in a specific language
-python httpcode.py 404 --lang fa
-
-# Export all 4xx errors to a Markdown file
-python httpcode.py 4xx --export md --out errors.md
-
-# Export all codes to a CSV file in Turkish
-python httpcode.py all --export csv --lang tr --out codes_tr.csv
+node server.js
 ```
 
-### Using the JSON Data
+Then open the local server URL.
 
-The data is available in `codes.json` for easy integration into your own projects:
+## Data quality rules
 
-```json
-{
-  "code": 418,
-  "phrase": "I'm a teapot",
-  "description": "April Fools' joke (RFC 2324), Hyper Text Coffee Pot Control Protocol.",
-  "class": "4xx Client Error",
-  "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418"
-}
-```
+New status entries should include:
 
-## 📋 Included Unofficial Codes
+- Source authority (IANA, RFC, vendor documentation)
+- Lifecycle state
+- Provider namespace for vendor codes
+- Translation coverage status
 
-- **Cloudflare**: 520, 521, 522, 524, 525, 526, 527, 530
-- **Nginx**: 444, 494, 495, 496, 497, 499
-- **AWS ELB**: 460, 463, 561
-- **Laravel**: 419
-- **Microsoft IIS**: 440, 449, 450
-- **Shopify**: 430
-- **Twitter**: 420
+## License
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License.
