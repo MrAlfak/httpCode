@@ -1,15 +1,19 @@
 {
   "name": "github-httpcode",
   "version": "1.0.0",
-  "description": "Comprehensive reference for HTTP status codes",
+  "description": "Verified standard and vendor-specific HTTP status code reference",
   "scripts": {
     "dev": "node server.js",
-    "build": "node build.js"
+    "build": "node build.js",
+    "lint": "node --check server.js && node --check build.js && node --check web/script.js",
+    "test": "python -m unittest discover -v",
+    "validate": "python tools/validate.py",
+    "coverage:i18n": "python tools/i18n_coverage.py",
+    "check:iana": "python tools/check_iana.py"
   },
-  "keywords": ["http", "status-codes"],
+  "keywords": ["http", "status-codes", "iana", "cloudflare", "nginx", "aws"],
   "author": "",
   "license": "MIT",
-  "devDependencies": {
-    "express": "^4.21.2"
-  }
+  "engines": {"node": ">=18"},
+  "devDependencies": {"express": "^4.21.2"}
 }

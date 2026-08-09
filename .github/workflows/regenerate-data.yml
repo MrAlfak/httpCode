@@ -1,0 +1,39 @@
+name: Regenerate Dataset
+
+on:
+  push:
+    paths:
+      - "data/**"
+      - "tools/build_dataset.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Generate codes.json
+        run: python tools/build_dataset.py
+      - name: Validate dataset
+        run: python tools/validate.py
+      - name: Commit generated dataset
+        shell: bash
+        run: |
+          if git diff --quiet -- codes.json; then
+            echo "codes.json is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add codes.json
+          git commit -m "Regenerate HTTP status dataset"
+          git push

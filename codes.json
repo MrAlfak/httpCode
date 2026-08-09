@@ -1,610 +1,1666 @@
 [
   {
+    "id": "iana-100",
     "code": 100,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Continue",
-    "description": "The server has received the request headers and the client should proceed to send the request body.",
+    "description": "The server received the request headers and the client should continue with the request body.",
     "class": "1xx Informational",
+    "status": "active",
+    "reference": "RFC9110, Section 15.2.1",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100"
   },
   {
+    "id": "iana-101",
     "code": 101,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Switching Protocols",
-    "description": "The requester has asked the server to switch protocols and the server has agreed to do so.",
+    "description": "The server is switching protocols as requested by the client.",
     "class": "1xx Informational",
+    "status": "active",
+    "reference": "RFC9110, Section 15.2.2",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101"
   },
   {
+    "id": "iana-102",
     "code": 102,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Processing",
-    "description": "A WebDAV request may contain many sub-requests involving file operations, requiring a long time to complete the request.",
+    "description": "The server has accepted the complete request but has not yet completed it.",
     "class": "1xx Informational",
+    "status": "active",
+    "reference": "RFC2518",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/102"
   },
   {
+    "id": "iana-103",
     "code": 103,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Early Hints",
-    "description": "Used to return some response headers before final HTTP message.",
+    "description": "Provides preliminary response headers before the final response.",
     "class": "1xx Informational",
+    "status": "active",
+    "reference": "RFC8297",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103"
   },
   {
+    "id": "iana-104",
+    "code": 104,
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "Upload Resumption Supported",
+    "description": "Temporary informational status for the resumable upload protocol.",
+    "class": "1xx Informational",
+    "status": "temporary",
+    "reference": "draft-ietf-httpbis-resumable-upload-05",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
+    "mdn_link": null
+  },
+  {
+    "id": "iana-200",
     "code": 200,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "OK",
-    "description": "Standard response for successful HTTP requests.",
+    "description": "The request succeeded.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC9110, Section 15.3.1",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200"
   },
   {
+    "id": "iana-201",
     "code": 201,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Created",
-    "description": "The request has been fulfilled, resulting in the creation of a new resource.",
+    "description": "The request succeeded and created a new resource.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC9110, Section 15.3.2",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201"
   },
   {
+    "id": "iana-202",
     "code": 202,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Accepted",
-    "description": "The request has been accepted for processing, but the processing has not been completed.",
+    "description": "The request was accepted for processing but processing is not complete.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC9110, Section 15.3.3",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202"
   },
   {
+    "id": "iana-203",
     "code": 203,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Non-Authoritative Information",
-    "description": "The server is a transforming proxy that received a 200 OK from its origin, but is returning a modified version of the origin's response.",
+    "description": "The response metadata was modified by a transforming proxy.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC9110, Section 15.3.4",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/203"
   },
   {
+    "id": "iana-204",
     "code": 204,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "No Content",
-    "description": "The server successfully processed the request, and is not returning any content.",
+    "description": "The request succeeded and there is no response content to send.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC9110, Section 15.3.5",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204"
   },
   {
+    "id": "iana-205",
     "code": 205,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Reset Content",
-    "description": "The server successfully processed the request, asks that the requester reset its document view, and is not returning any content.",
+    "description": "The request succeeded and the client should reset the document view.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC9110, Section 15.3.6",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/205"
   },
   {
+    "id": "iana-206",
     "code": 206,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Partial Content",
-    "description": "The server is delivering only part of the resource due to a range header sent by the client.",
+    "description": "The server is sending one or more ranges of the selected representation.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC9110, Section 15.3.7",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206"
   },
   {
+    "id": "iana-207",
     "code": 207,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Multi-Status",
-    "description": "The message body that follows is by default an XML message and can contain a number of separate response codes.",
+    "description": "Conveys information about multiple resources in a WebDAV response.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC4918",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/207"
   },
   {
+    "id": "iana-208",
     "code": 208,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Already Reported",
-    "description": "The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response, and are not being included again.",
+    "description": "Avoids repeatedly enumerating members of a DAV binding.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC5842",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/208"
   },
   {
+    "id": "iana-226",
     "code": 226,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "IM Used",
-    "description": "The server has fulfilled a request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.",
+    "description": "The response represents the result of one or more instance manipulations.",
     "class": "2xx Success",
+    "status": "active",
+    "reference": "RFC3229",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/226"
   },
   {
+    "id": "iana-300",
     "code": 300,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Multiple Choices",
-    "description": "Indicates multiple options for the resource from which the client may choose.",
+    "description": "The target resource has more than one representation or location.",
     "class": "3xx Redirection",
+    "status": "active",
+    "reference": "RFC9110, Section 15.4.1",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300"
   },
   {
+    "id": "iana-301",
     "code": 301,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Moved Permanently",
-    "description": "This and all future requests should be directed to the given URI.",
+    "description": "The target resource has been assigned a new permanent URI.",
     "class": "3xx Redirection",
+    "status": "active",
+    "reference": "RFC9110, Section 15.4.2",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301"
   },
   {
+    "id": "iana-302",
     "code": 302,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Found",
-    "description": "Tells the client to look at (browse to) another URL. 302 has been superseded by 303 and 307.",
+    "description": "The target resource temporarily resides under a different URI.",
     "class": "3xx Redirection",
+    "status": "active",
+    "reference": "RFC9110, Section 15.4.3",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302"
   },
   {
+    "id": "iana-303",
     "code": 303,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "See Other",
-    "description": "The response to the request can be found under another URI using the GET method.",
+    "description": "The client should retrieve another resource with a GET or HEAD request.",
     "class": "3xx Redirection",
+    "status": "active",
+    "reference": "RFC9110, Section 15.4.4",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303"
   },
   {
+    "id": "iana-304",
     "code": 304,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Not Modified",
-    "description": "Indicates that the resource has not been modified since the version specified by the request headers If-Modified-Since or If-None-Match.",
+    "description": "A conditional GET or HEAD would have resulted in 200, but the representation is unchanged.",
     "class": "3xx Redirection",
+    "status": "active",
+    "reference": "RFC9110, Section 15.4.5",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304"
   },
   {
+    "id": "iana-305",
     "code": 305,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Use Proxy",
-    "description": "The requested resource is available only through a proxy, the address for which is provided in the response.",
+    "description": "The target resource must be accessed through the proxy given by the response.",
     "class": "3xx Redirection",
+    "status": "active",
+    "reference": "RFC9110, Section 15.4.6",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/305"
   },
   {
-    "code": 307,
-    "phrase": "Temporary Redirect",
-    "description": "In this case, the request should be repeated with another URI; however, future requests should still use the original URI.",
+    "id": "iana-306",
+    "code": 306,
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "(Unused)",
+    "description": "Reserved and no longer used.",
     "class": "3xx Redirection",
+    "status": "unused",
+    "reference": "RFC9110, Section 15.4.7",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
+    "mdn_link": null
+  },
+  {
+    "id": "iana-307",
+    "code": 307,
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "Temporary Redirect",
+    "description": "The target resource temporarily resides under a different URI and the request method must not change.",
+    "class": "3xx Redirection",
+    "status": "active",
+    "reference": "RFC9110, Section 15.4.8",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307"
   },
   {
+    "id": "iana-308",
     "code": 308,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Permanent Redirect",
-    "description": "The request and all future requests should be repeated using another URI.",
+    "description": "The target resource has a permanent new URI and the request method must not change.",
     "class": "3xx Redirection",
+    "status": "active",
+    "reference": "RFC9110, Section 15.4.9",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/308"
   },
   {
+    "id": "iana-400",
     "code": 400,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Bad Request",
-    "description": "The server cannot or will not process the request due to an apparent client error.",
+    "description": "The server cannot process the request because it considers it a client error.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.1",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
   },
   {
+    "id": "iana-401",
     "code": 401,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Unauthorized",
-    "description": "Specifically for use when authentication is required and has failed or has not yet been provided.",
+    "description": "Authentication credentials are missing or invalid.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.2",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"
   },
   {
+    "id": "iana-402",
     "code": 402,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Payment Required",
-    "description": "Reserved for future use. The original intention was for digital cash or micropayment schemes.",
+    "description": "Reserved for future use.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.3",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"
   },
   {
+    "id": "iana-403",
     "code": 403,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Forbidden",
-    "description": "The request contained valid data and was understood by the server, but the server is refusing action.",
+    "description": "The server understood the request but refuses to fulfill it.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.4",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
   },
   {
+    "id": "iana-404",
     "code": 404,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Not Found",
-    "description": "The requested resource could not be found but may be available in the future.",
+    "description": "The server did not find a current representation for the target resource.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.5",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
   },
   {
+    "id": "iana-405",
     "code": 405,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Method Not Allowed",
-    "description": "A request method is not supported for the requested resource.",
+    "description": "The request method is known but not supported by the target resource.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.6",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405"
   },
   {
+    "id": "iana-406",
     "code": 406,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Not Acceptable",
-    "description": "The requested resource is capable of generating only content not acceptable according to the Accept headers.",
+    "description": "No current representation is acceptable according to proactive content negotiation.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.7",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406"
   },
   {
+    "id": "iana-407",
     "code": 407,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Proxy Authentication Required",
-    "description": "The client must first authenticate itself with the proxy.",
+    "description": "The client must authenticate with the proxy.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.8",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407"
   },
   {
+    "id": "iana-408",
     "code": 408,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Request Timeout",
-    "description": "The server timed out waiting for the request.",
+    "description": "The server did not receive a complete request within the time it was prepared to wait.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.9",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408"
   },
   {
+    "id": "iana-409",
     "code": 409,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Conflict",
-    "description": "Indicates that the request could not be processed because of conflict in the current state of the resource.",
+    "description": "The request conflicts with the current state of the target resource.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.10",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409"
   },
   {
+    "id": "iana-410",
     "code": 410,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Gone",
-    "description": "Indicates that the resource requested is no longer available and will not be available again.",
+    "description": "The target resource is no longer available and the condition is likely permanent.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.11",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410"
   },
   {
+    "id": "iana-411",
     "code": 411,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Length Required",
-    "description": "The request did not specify the length of its content, which is required by the requested resource.",
+    "description": "The server refuses the request because Content-Length is not defined where required.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.12",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/411"
   },
   {
+    "id": "iana-412",
     "code": 412,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Precondition Failed",
-    "description": "The server does not meet one of the preconditions that the requester put on the request header fields.",
+    "description": "One or more conditions in the request header fields evaluated to false.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.13",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412"
   },
   {
+    "id": "iana-413",
     "code": 413,
-    "phrase": "Payload Too Large",
-    "description": "The request is larger than the server is willing or able to process.",
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "Content Too Large",
+    "description": "The request content is larger than the server is willing or able to process.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.14",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413"
   },
   {
+    "id": "iana-414",
     "code": 414,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "URI Too Long",
-    "description": "The URI provided was too long for the server to process.",
+    "description": "The request target URI is longer than the server is willing to interpret.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.15",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/414"
   },
   {
+    "id": "iana-415",
     "code": 415,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Unsupported Media Type",
-    "description": "The request entity has a media type which the server or resource does not support.",
+    "description": "The request content uses a format that the target resource does not support.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.16",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/415"
   },
   {
+    "id": "iana-416",
     "code": 416,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Range Not Satisfiable",
-    "description": "The client has asked for a portion of the file, but the server cannot supply that portion.",
+    "description": "The selected representation cannot satisfy the requested ranges.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.17",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/416"
   },
   {
+    "id": "iana-417",
     "code": 417,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Expectation Failed",
-    "description": "The server cannot meet the requirements of the Expect request-header field.",
+    "description": "The expectation in the Expect request header could not be met.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.18",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/417"
   },
   {
+    "id": "iana-418",
     "code": 418,
-    "phrase": "I'm a teapot",
-    "description": "April Fools' joke (RFC 2324), Hyper Text Coffee Pot Control Protocol.",
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "(Unused)",
+    "description": "Reserved as unused by the current HTTP semantics specification.",
     "class": "4xx Client Error",
-    "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418"
+    "status": "unused",
+    "reference": "RFC9110, Section 15.5.19",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
+    "mdn_link": null
   },
   {
+    "id": "laravel-419",
+    "code": 419,
+    "type": "vendor",
+    "provider": "laravel",
+    "phrase": "Page Expired",
+    "description": "Common Laravel response used when a CSRF token is missing, invalid, or expired.",
+    "status": "active",
+    "source": {
+      "name": "Laravel CSRF documentation",
+      "url": "https://laravel.com/docs/13.x/csrf",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "twitter-420",
+    "code": 420,
+    "type": "vendor",
+    "provider": "twitter",
+    "phrase": "Enhance Your Calm",
+    "description": "Historical Twitter API rate-limit response.",
+    "status": "obsoleted",
+    "source": {
+      "name": "Historical Twitter API usage",
+      "url": "https://developer.x.com/",
+      "quality": "historical"
+    },
+    "verified_at": null,
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "iana-421",
     "code": 421,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Misdirected Request",
-    "description": "The request was directed at a server that is not able to produce a response.",
+    "description": "The request was directed at a server that cannot produce a response for the target URI.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.20",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/421"
   },
   {
+    "id": "iana-422",
     "code": 422,
-    "phrase": "Unprocessable Entity",
-    "description": "The request was well-formed but was unable to be followed due to semantic errors.",
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "Unprocessable Content",
+    "description": "The server understands the content type and syntax but cannot process the contained instructions.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.21",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422"
   },
   {
+    "id": "iana-423",
     "code": 423,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Locked",
-    "description": "The resource that is being accessed is locked.",
+    "description": "The source or destination resource of a WebDAV method is locked.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC4918",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/423"
   },
   {
+    "id": "iana-424",
     "code": 424,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Failed Dependency",
-    "description": "The request failed because it depended on another action and that action failed.",
+    "description": "The method could not be performed because a dependent action failed.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC4918",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/424"
   },
   {
+    "id": "iana-425",
     "code": 425,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Too Early",
-    "description": "Indicates that the server is unwilling to risk processing a request that might be replayed.",
+    "description": "The server is unwilling to risk processing a request that might be replayed.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC8470",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/425"
   },
   {
+    "id": "iana-426",
     "code": 426,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Upgrade Required",
-    "description": "The client should switch to a different protocol such as TLS/1.0.",
+    "description": "The server requires the client to switch to a different protocol.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.5.22",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/426"
   },
   {
+    "id": "iana-428",
     "code": 428,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Precondition Required",
     "description": "The origin server requires the request to be conditional.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC6585",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/428"
   },
   {
+    "id": "iana-429",
     "code": 429,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Too Many Requests",
-    "description": "The user has sent too many requests in a given amount of time.",
+    "description": "The client sent too many requests in a given amount of time.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC6585",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
   },
   {
-    "code": 431,
+    "id": "shopify-430",
+    "code": 430,
+    "type": "vendor",
+    "provider": "shopify",
     "phrase": "Request Header Fields Too Large",
-    "description": "The server is unwilling to process the request because header fields are too large.",
+    "description": "Historical Shopify-specific response associated with request or rate-limit handling.",
+    "status": "active",
+    "source": {
+      "name": "Shopify developer platform",
+      "url": "https://shopify.dev/",
+      "quality": "community"
+    },
+    "verified_at": null,
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "iana-431",
+    "code": 431,
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "Request Header Fields Too Large",
+    "description": "The server refuses to process the request because its header fields are too large.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC6585",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431"
   },
   {
+    "id": "iis-440",
+    "code": 440,
+    "type": "vendor",
+    "provider": "microsoft-iis",
+    "phrase": "Login Timeout",
+    "description": "Microsoft IIS extension indicating that the client's session has expired.",
+    "status": "active",
+    "source": {
+      "name": "Microsoft IIS documentation",
+      "url": "https://learn.microsoft.com/iis/",
+      "quality": "community"
+    },
+    "verified_at": null,
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "nginx-444",
+    "code": 444,
+    "type": "vendor",
+    "provider": "nginx",
+    "phrase": "No Response",
+    "description": "Nginx closes the connection without sending an HTTP response header.",
+    "status": "active",
+    "source": {
+      "name": "Nginx documentation",
+      "url": "https://nginx.org/en/docs/http/request_processing.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "iis-449",
+    "code": 449,
+    "type": "vendor",
+    "provider": "microsoft-iis",
+    "phrase": "Retry With",
+    "description": "Microsoft IIS extension asking the client to retry after performing an appropriate action.",
+    "status": "obsoleted",
+    "source": {
+      "name": "Microsoft IIS documentation",
+      "url": "https://learn.microsoft.com/iis/",
+      "quality": "historical"
+    },
+    "verified_at": null,
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "iis-450",
+    "code": 450,
+    "type": "vendor",
+    "provider": "microsoft-iis",
+    "phrase": "Blocked by Windows Parental Controls",
+    "description": "Historical Microsoft extension for Windows parental controls.",
+    "status": "obsoleted",
+    "source": {
+      "name": "Microsoft documentation",
+      "url": "https://learn.microsoft.com/",
+      "quality": "historical"
+    },
+    "verified_at": null,
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "iana-451",
     "code": 451,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Unavailable For Legal Reasons",
-    "description": "Legal demand to deny access to a resource.",
+    "description": "Access to the resource is denied as a consequence of a legal demand.",
     "class": "4xx Client Error",
+    "status": "active",
+    "reference": "RFC7725",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
   },
   {
+    "id": "aws-alb-460",
+    "code": 460,
+    "type": "vendor",
+    "provider": "aws-alb",
+    "phrase": "Client Closed Connection",
+    "description": "The client closed the connection with the Application Load Balancer before the idle timeout elapsed.",
+    "status": "active",
+    "source": {
+      "name": "AWS Application Load Balancer troubleshooting",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-troubleshooting.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "aws-alb-463",
+    "code": 463,
+    "type": "vendor",
+    "provider": "aws-alb",
+    "phrase": "Too Many IP Addresses in X-Forwarded-For",
+    "description": "The Application Load Balancer received an X-Forwarded-For header containing more than 30 IP addresses.",
+    "status": "active",
+    "source": {
+      "name": "AWS Application Load Balancer troubleshooting",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-troubleshooting.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "aws-alb-464",
+    "code": 464,
+    "type": "vendor",
+    "provider": "aws-alb",
+    "phrase": "Incompatible Protocol",
+    "description": "The incoming request protocol is incompatible with the configured target group protocol version.",
+    "status": "active",
+    "source": {
+      "name": "AWS Application Load Balancer troubleshooting",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-troubleshooting.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "nginx-494",
+    "code": 494,
+    "type": "vendor",
+    "provider": "nginx",
+    "phrase": "Request Header Too Large",
+    "description": "Nginx internal response for an oversized request header.",
+    "status": "active",
+    "source": {
+      "name": "Nginx documentation",
+      "url": "https://mailman.nginx.org/pipermail/nginx-devel/2020-February/013025.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "nginx-495",
+    "code": 495,
+    "type": "vendor",
+    "provider": "nginx",
+    "phrase": "SSL Certificate Error",
+    "description": "Nginx internal response for an invalid client certificate.",
+    "status": "active",
+    "source": {
+      "name": "Nginx documentation",
+      "url": "https://nginx.org/en/docs/http/ngx_http_ssl_module.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "nginx-496",
+    "code": 496,
+    "type": "vendor",
+    "provider": "nginx",
+    "phrase": "SSL Certificate Required",
+    "description": "Nginx internal response when a client certificate is required but missing.",
+    "status": "active",
+    "source": {
+      "name": "Nginx documentation",
+      "url": "https://nginx.org/en/docs/http/ngx_http_ssl_module.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "nginx-497",
+    "code": 497,
+    "type": "vendor",
+    "provider": "nginx",
+    "phrase": "HTTP Request Sent to HTTPS Port",
+    "description": "Nginx internal response when plain HTTP is sent to a port expecting HTTPS.",
+    "status": "active",
+    "source": {
+      "name": "Nginx documentation",
+      "url": "https://nginx.org/en/docs/http/ngx_http_ssl_module.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "arcgis-498",
+    "code": 498,
+    "type": "vendor",
+    "provider": "arcgis",
+    "phrase": "Invalid Token",
+    "description": "ArcGIS ecosystem response associated with an invalid or expired token.",
+    "status": "active",
+    "source": {
+      "name": "ArcGIS developer documentation",
+      "url": "https://developers.arcgis.com/",
+      "quality": "community"
+    },
+    "verified_at": null,
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "nginx-499",
+    "code": 499,
+    "type": "vendor",
+    "provider": "nginx",
+    "phrase": "Client Closed Request",
+    "description": "Nginx records that the client closed the connection before the server could send a response.",
+    "status": "active",
+    "source": {
+      "name": "Nginx documentation",
+      "url": "https://trac.nginx.org/nginx/ticket/274",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "4xx Client Error"
+  },
+  {
+    "id": "iana-500",
     "code": 500,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Internal Server Error",
-    "description": "Generic error message for unexpected conditions.",
+    "description": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.6.1",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
   },
   {
+    "id": "iana-501",
     "code": 501,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Not Implemented",
-    "description": "The server lacks the ability to fulfil the request.",
+    "description": "The server does not support the functionality required to fulfill the request.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.6.2",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501"
   },
   {
+    "id": "iana-502",
     "code": 502,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Bad Gateway",
-    "description": "Invalid response from the upstream server.",
+    "description": "A gateway or proxy received an invalid response from an upstream server.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.6.3",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
   },
   {
+    "id": "iana-503",
     "code": 503,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Service Unavailable",
-    "description": "The server is overloaded or down for maintenance.",
+    "description": "The server is currently unable to handle the request, usually temporarily.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.6.4",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
   },
   {
+    "id": "iana-504",
     "code": 504,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Gateway Timeout",
-    "description": "The server acting as a gateway did not receive a timely response.",
+    "description": "A gateway or proxy did not receive a timely response from an upstream server.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.6.5",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504"
   },
   {
+    "id": "iana-505",
     "code": 505,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "HTTP Version Not Supported",
-    "description": "The server does not support the HTTP protocol version used.",
+    "description": "The server does not support the HTTP version used in the request.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC9110, Section 15.6.6",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/505"
   },
   {
+    "id": "iana-506",
     "code": 506,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Variant Also Negotiates",
-    "description": "Circular reference in transparent content negotiation.",
+    "description": "The server has an internal configuration error in transparent content negotiation.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC2295",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/506"
   },
   {
+    "id": "iana-507",
     "code": 507,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Insufficient Storage",
-    "description": "The server is unable to store the representation needed.",
+    "description": "The server cannot store the representation needed to complete the WebDAV request.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC4918",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/507"
   },
   {
+    "id": "iana-508",
     "code": 508,
+    "type": "standard",
+    "provider": "iana",
     "phrase": "Loop Detected",
-    "description": "Infinite loop detected while processing the request.",
+    "description": "The server detected an infinite loop while processing the request.",
     "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC5842",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/508"
   },
   {
-    "code": 510,
-    "phrase": "Not Extended",
-    "description": "Further extensions to the request are required.",
-    "class": "5xx Server Error",
-    "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/510"
+    "id": "cpanel-509",
+    "code": 509,
+    "type": "vendor",
+    "provider": "apache-cpanel",
+    "phrase": "Bandwidth Limit Exceeded",
+    "description": "Unofficial hosting-stack response indicating that an account exceeded its bandwidth allowance.",
+    "status": "active",
+    "source": {
+      "name": "cPanel documentation",
+      "url": "https://docs.cpanel.net/",
+      "quality": "community"
+    },
+    "verified_at": null,
+    "class": "5xx Server Error"
   },
   {
-    "code": 511,
-    "phrase": "Network Authentication Required",
-    "description": "The client needs to authenticate to gain network access.",
+    "id": "iana-510",
+    "code": 510,
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "Not Extended",
+    "description": "The extension framework that defined this status has been obsoleted.",
     "class": "5xx Server Error",
+    "status": "obsoleted",
+    "reference": "RFC2774; Status change of HTTP experiments to Historic",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
+    "mdn_link": null
+  },
+  {
+    "id": "iana-511",
+    "code": 511,
+    "type": "standard",
+    "provider": "iana",
+    "phrase": "Network Authentication Required",
+    "description": "The client must authenticate to gain network access.",
+    "class": "5xx Server Error",
+    "status": "active",
+    "reference": "RFC6585",
+    "source": {
+      "name": "IANA HTTP Status Code Registry",
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+      "quality": "official"
+    },
+    "verified_at": "2026-08-09",
     "mdn_link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/511"
   },
   {
-    "code": 419,
-    "phrase": "Page Expired",
-    "description": "Used by the Laravel Framework when a CSRF Token is missing or expired.",
-    "class": "4xx Client Error (Unofficial - Laravel)"
-  },
-  {
-    "code": 420,
-    "phrase": "Enhance Your Calm",
-    "description": "Returned by Twitter when the client is being rate limited.",
-    "class": "4xx Client Error (Unofficial - Twitter)"
-  },
-  {
-    "code": 430,
-    "phrase": "Request Header Fields Too Large",
-    "description": "Used by Shopify when too many URLs are requested within a certain time frame.",
-    "class": "4xx Client Error (Unofficial - Shopify)"
-  },
-  {
-    "code": 440,
-    "phrase": "Login Timeout",
-    "description": "The client's session has expired (IIS).",
-    "class": "4xx Client Error (Unofficial - IIS)"
-  },
-  {
-    "code": 444,
-    "phrase": "No Response",
-    "description": "Nginx closes the connection without sending a response.",
-    "class": "4xx Client Error (Unofficial - Nginx)"
-  },
-  {
-    "code": 449,
-    "phrase": "Retry With",
-    "description": "The request should be retried after performing the appropriate action (IIS).",
-    "class": "4xx Client Error (Unofficial - IIS)"
-  },
-  {
-    "code": 450,
-    "phrase": "Blocked by Windows Parental Controls",
-    "description": "Microsoft extension for Windows Parental Controls.",
-    "class": "4xx Client Error (Unofficial - IIS)"
-  },
-  {
-    "code": 460,
-    "phrase": "Client Closed Connection",
-    "description": "Client closed the connection with AWS ELB before timeout.",
-    "class": "4xx Client Error (Unofficial - AWS ELB)"
-  },
-  {
-    "code": 463,
-    "phrase": "X-Forwarded-For Header Too Large",
-    "description": "AWS ELB: X-Forwarded-For header with more than 30 IPs.",
-    "class": "4xx Client Error (Unofficial - AWS ELB)"
-  },
-  {
-    "code": 494,
-    "phrase": "Request Header Too Large",
-    "description": "Nginx: Client sent too large header or cookie.",
-    "class": "4xx Client Error (Unofficial - Nginx)"
-  },
-  {
-    "code": 495,
-    "phrase": "SSL Certificate Error",
-    "description": "Nginx: Client provided an invalid client certificate.",
-    "class": "4xx Client Error (Unofficial - Nginx)"
-  },
-  {
-    "code": 496,
-    "phrase": "SSL Certificate Required",
-    "description": "Nginx: Client certificate is required but not provided.",
-    "class": "4xx Client Error (Unofficial - Nginx)"
-  },
-  {
-    "code": 497,
-    "phrase": "HTTP Request Sent to HTTPS Port",
-    "description": "Nginx: HTTP request made to a port listening for HTTPS.",
-    "class": "4xx Client Error (Unofficial - Nginx)"
-  },
-  {
-    "code": 498,
-    "phrase": "Invalid Token",
-    "description": "Returned by ArcGIS Runtime SDK for iOS when an expired or invalid token is used.",
-    "class": "4xx Client Error (Unofficial - Google/ArcGIS)"
-  },
-  {
-    "code": 499,
-    "phrase": "Client Closed Request",
-    "description": "Client closed the connection before server could respond (Nginx).",
-    "class": "4xx Client Error (Unofficial - Nginx)"
-  },
-  {
-    "code": 509,
-    "phrase": "Bandwidth Limit Exceeded",
-    "description": "The server has exceeded the bandwidth specified (Apache/cPanel).",
-    "class": "5xx Server Error (Unofficial - Apache/cPanel)"
-  },
-  {
+    "id": "cloudflare-520",
     "code": 520,
-    "phrase": "Unknown Error",
-    "description": "Cloudflare: Origin server returned an unknown response.",
-    "class": "5xx Server Error (Unofficial - Cloudflare)"
+    "type": "vendor",
+    "provider": "cloudflare",
+    "phrase": "Web Server Returns an Unknown Error",
+    "description": "Cloudflare received an empty, unknown, or unexpected response from the origin server.",
+    "status": "active",
+    "source": {
+      "name": "Cloudflare Error 520",
+      "url": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "cloudflare-521",
     "code": 521,
+    "type": "vendor",
+    "provider": "cloudflare",
     "phrase": "Web Server Is Down",
-    "description": "Cloudflare: Origin server refused the connection.",
-    "class": "5xx Server Error (Unofficial - Cloudflare)"
+    "description": "Cloudflare could not establish a connection because the origin refused it.",
+    "status": "active",
+    "source": {
+      "name": "Cloudflare HTTP status codes",
+      "url": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "cloudflare-522",
     "code": 522,
+    "type": "vendor",
+    "provider": "cloudflare",
     "phrase": "Connection Timed Out",
-    "description": "Cloudflare: TCP handshake with origin failed.",
-    "class": "5xx Server Error (Unofficial - Cloudflare)"
+    "description": "Cloudflare timed out while establishing or completing a TCP connection with the origin.",
+    "status": "active",
+    "source": {
+      "name": "Cloudflare HTTP status codes",
+      "url": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "cloudflare-523",
     "code": 523,
+    "type": "vendor",
+    "provider": "cloudflare",
     "phrase": "Origin Is Unreachable",
-    "description": "Cloudflare: Could not reach origin server.",
-    "class": "5xx Server Error (Unofficial - Cloudflare)"
+    "description": "Cloudflare could not reach the origin server.",
+    "status": "active",
+    "source": {
+      "name": "Cloudflare HTTP status codes",
+      "url": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "cloudflare-524",
     "code": 524,
+    "type": "vendor",
+    "provider": "cloudflare",
     "phrase": "A Timeout Occurred",
-    "description": "Cloudflare: TCP handshake succeeded but origin did not respond in time.",
-    "class": "5xx Server Error (Unofficial - Cloudflare)"
+    "description": "Cloudflare connected to the origin but the origin did not respond within the expected time.",
+    "status": "active",
+    "source": {
+      "name": "Cloudflare HTTP status codes",
+      "url": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "cloudflare-525",
     "code": 525,
+    "type": "vendor",
+    "provider": "cloudflare",
     "phrase": "SSL Handshake Failed",
-    "description": "Cloudflare: Could not negotiate SSL/TLS handshake with origin.",
-    "class": "5xx Server Error (Unofficial - Cloudflare)"
+    "description": "Cloudflare could not negotiate an SSL/TLS handshake with the origin.",
+    "status": "active",
+    "source": {
+      "name": "Cloudflare HTTP status codes",
+      "url": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "cloudflare-526",
     "code": 526,
+    "type": "vendor",
+    "provider": "cloudflare",
     "phrase": "Invalid SSL Certificate",
-    "description": "Cloudflare: Could not validate SSL/TLS certificate from origin.",
-    "class": "5xx Server Error (Unofficial - Cloudflare)"
+    "description": "Cloudflare could not validate the origin server's SSL/TLS certificate.",
+    "status": "active",
+    "source": {
+      "name": "Cloudflare HTTP status codes",
+      "url": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "cloudflare-527",
     "code": 527,
+    "type": "vendor",
+    "provider": "cloudflare",
     "phrase": "Railgun Error",
-    "description": "Cloudflare: Request failed after WAN connection was established.",
-    "class": "5xx Server Error (Unofficial - Cloudflare)"
+    "description": "Historical Cloudflare Railgun-related error.",
+    "status": "obsoleted",
+    "source": {
+      "name": "Historical Cloudflare Railgun usage",
+      "url": "https://developers.cloudflare.com/",
+      "quality": "historical"
+    },
+    "verified_at": null,
+    "class": "5xx Server Error"
   },
   {
+    "id": "qualys-529",
     "code": 529,
-    "phrase": "Site is overloaded",
-    "description": "Used by Qualys in the SSLLabs API to indicate overload.",
-    "class": "5xx Server Error (Unofficial)"
+    "type": "vendor",
+    "provider": "qualys",
+    "phrase": "Site Is Overloaded",
+    "description": "Unofficial Qualys SSL Labs API response indicating overload.",
+    "status": "active",
+    "source": {
+      "name": "Qualys SSL Labs",
+      "url": "https://www.ssllabs.com/",
+      "quality": "community"
+    },
+    "verified_at": null,
+    "class": "5xx Server Error"
   },
   {
+    "id": "cloudflare-530",
     "code": 530,
-    "phrase": "Site is frozen",
-    "description": "Used by Pantheon to indicate a frozen site.",
-    "class": "5xx Server Error (Unofficial - Pantheon)"
+    "type": "vendor",
+    "provider": "cloudflare",
+    "phrase": "Origin DNS Error",
+    "description": "Cloudflare is unable to resolve the origin hostname and cannot establish a connection to the origin.",
+    "status": "active",
+    "source": {
+      "name": "Cloudflare Error 530",
+      "url": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-530/",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "pantheon-530",
+    "code": 530,
+    "type": "vendor",
+    "provider": "pantheon",
+    "phrase": "Site Is Frozen",
+    "description": "Pantheon-specific response historically used for a frozen site.",
+    "status": "active",
+    "source": {
+      "name": "Pantheon documentation",
+      "url": "https://docs.pantheon.io/",
+      "quality": "community"
+    },
+    "verified_at": null,
+    "class": "5xx Server Error"
+  },
+  {
+    "id": "aws-alb-561",
     "code": 561,
+    "type": "vendor",
+    "provider": "aws-alb",
     "phrase": "Unauthorized",
-    "description": "AWS ELB: Client authentication attempt with IdP failed.",
-    "class": "5xx Server Error (Unofficial - AWS ELB)"
+    "description": "An Application Load Balancer authentication rule received an error from the identity provider.",
+    "status": "active",
+    "source": {
+      "name": "AWS Application Load Balancer troubleshooting",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-troubleshooting.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
   },
   {
+    "id": "aws-alb-562",
+    "code": 562,
+    "type": "vendor",
+    "provider": "aws-alb",
+    "phrase": "JWKS Request Failed",
+    "description": "The Application Load Balancer did not receive a successful and valid response from the configured JWKS endpoint.",
+    "status": "active",
+    "source": {
+      "name": "AWS Application Load Balancer troubleshooting",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-troubleshooting.html",
+      "quality": "vendor"
+    },
+    "verified_at": "2026-08-09",
+    "class": "5xx Server Error"
+  },
+  {
+    "id": "proxy-598",
     "code": 598,
+    "type": "vendor",
+    "provider": "various-proxies",
     "phrase": "Network Read Timeout Error",
-    "description": "Used by some proxies to indicate a network read timeout.",
-    "class": "5xx Server Error (Unofficial)"
+    "description": "Unofficial proxy response used by some implementations for a network read timeout.",
+    "status": "active",
+    "source": {
+      "name": "Ecosystem usage",
+      "url": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
+      "quality": "community"
+    },
+    "verified_at": null,
+    "class": "5xx Server Error"
   },
   {
+    "id": "proxy-599",
     "code": 599,
+    "type": "vendor",
+    "provider": "various-proxies",
     "phrase": "Network Connect Timeout Error",
-    "description": "Used by some proxies to indicate a network connect timeout.",
-    "class": "5xx Server Error (Unofficial)"
+    "description": "Unofficial proxy response used by some implementations for a network connection timeout.",
+    "status": "active",
+    "source": {
+      "name": "Ecosystem usage",
+      "url": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
+      "quality": "community"
+    },
+    "verified_at": null,
+    "class": "5xx Server Error"
   }
 ]

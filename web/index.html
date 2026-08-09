@@ -1,139 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTTP Status Codes - Global Reference</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Verified standard and vendor-specific HTTP status code reference.">
+  <title>HTTP Status Codes — Verified Reference</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>HTTP Status Codes</h1>
-            <p>Comprehensive reference for developers in 100+ languages</p>
-            <div class="controls">
-                <label for="search" class="visually-hidden">Search by code or keyword</label>
-                <input type="text" id="search" placeholder="Search by code or keyword..." aria-label="Search HTTP status codes">
-                <label for="lang-select" class="visually-hidden">Select language</label>
-                <select id="lang-select" aria-label="Select language">
-                    <option value="en">English (EN)</option>
-                    <option value="fa">Persian (FA)</option>
-                    <option value="ar">Arabic (AR)</option>
-                    <option value="zh">Chinese (ZH)</option>
-                    <option value="es">Spanish (ES)</option>
-                    <option value="fr">French (FR)</option>
-                    <option value="de">German (DE)</option>
-                    <option value="ja">Japanese (JA)</option>
-                    <option value="ru">Russian (RU)</option>
-                    <option value="pt">Portuguese (PT)</option>
-                    <option value="tr">Turkish (TR)</option>
-                    <option value="hi">Hindi (HI)</option>
-                    <option value="it">Italian (IT)</option>
-                    <option value="ko">Korean (KO)</option>
-                    <option value="vi">Vietnamese (VI)</option>
-                    <option value="nl">Dutch (NL)</option>
-                    <option value="pl">Polish (PL)</option>
-                    <option value="id">Indonesian (ID)</option>
-                    <option value="th">Thai (TH)</option>
-                    <option value="el">Greek (EL)</option>
-                    <option value="sv">Swedish (SV)</option>
-                    <option value="ro">Romanian (RO)</option>
-                    <option value="he">Hebrew (HE)</option>
-                    <option value="uk">Ukrainian (UK)</option>
-                    <option value="bn">Bengali (BN)</option>
-                    <option value="fi">Finnish (FI)</option>
-                    <option value="hu">Hungarian (HU)</option>
-                    <option value="cs">Czech (CS)</option>
-                    <option value="da">Danish (DA)</option>
-                    <option value="no">Norwegian (NO)</option>
-                    <option value="ms">Malay (MS)</option>
-                    <option value="tl">Filipino (TL)</option>
-                    <option value="sw">Swahili (SW)</option>
-                    <option value="ca">Catalan (CA)</option>
-                    <option value="ps">Pashto (PS)</option>
-                    <option value="ku">Kurdish (KU)</option>
-                    <option value="uz">Uzbek (UZ)</option>
-                    <option value="bg">Bulgarian (BG)</option>
-                    <option value="hr">Croatian (HR)</option>
-                    <option value="sr">Serbian (SR)</option>
-                    <option value="sk">Slovak (SK)</option>
-                    <option value="lt">Lithuanian (LT)</option>
-                    <option value="sq">Albanian (SQ)</option>
-                    <option value="tg">Tajik (TG)</option>
-                    <option value="uz-cyr">Uzbek Cyrillic (UZ-CYR)</option>
-                    <option value="et">Estonian (ET)</option>
-                    <option value="lv">Latvian (LV)</option>
-                    <option value="sl">Slovenian (SL)</option>
-                    <option value="hy">Armenian (HY)</option>
-                    <option value="ka">Georgian (KA)</option>
-                    <option value="is">Icelandic (IS)</option>
-                    <option value="mt">Maltese (MT)</option>
-                    <option value="mk">Macedonian (MK)</option>
-                    <option value="gl">Galician (GL)</option>
-                    <option value="kk">Kazakh (KK)</option>
-                    <option value="az">Azerbaijani (AZ)</option>
-                    <option value="be">Belarusian (BE)</option>
-                    <option value="ky">Kyrgyz (KY)</option>
-                    <option value="tk">Turkmen (TK)</option>
-                    <option value="mn">Mongolian (MN)</option>
-                    <option value="ta">Tamil (TA)</option>
-                    <option value="te">Telugu (TE)</option>
-                    <option value="kn">Kannada (KN)</option>
-                    <option value="ml">Malayalam (ML)</option>
-                    <option value="ur">Urdu (UR)</option>
-                    <option value="pa">Punjabi (PA)</option>
-                    <option value="mr">Marathi (MR)</option>
-                    <option value="gu">Gujarati (GU)</option>
-                    <option value="am">Amharic (AM)</option>
-                    <option value="yo">Yoruba (YO)</option>
-                    <option value="ha">Hausa (HA)</option>
-                    <option value="zu">Zulu (ZU)</option>
-                    <option value="km">Khmer (KM)</option>
-                    <option value="lo">Lao (LO)</option>
-                    <option value="my">Burmese (MY)</option>
-                    <option value="si">Sinhala (SI)</option>
-                    <option value="ne">Nepali (NE)</option>
-                    <option value="so">Somali (SO)</option>
-                    <option value="mg">Malagasy (MG)</option>
-                    <option value="eo">Esperanto (EO)</option>
-                    <option value="la">Latin (LA)</option>
-                    <option value="sa">Sanskrit (SA)</option>
-                    <option value="bo">Tibetan (BO)</option>
-                    <option value="cy">Welsh (CY)</option>
-                    <option value="ga">Irish (GA)</option>
-                    <option value="gd">Scottish Gaelic (GD)</option>
-                    <option value="lb">Luxembourgish (LB)</option>
-                    <option value="fy">Frisian (FY)</option>
-                    <option value="rm">Romansh (RM)</option>
-                    <option value="oc">Occitan (OC)</option>
-                    <option value="sc">Sardinian (SC)</option>
-                    <option value="scn">Sicilian (SCN)</option>
-                    <option value="vec">Venetian (VEC)</option>
-                    <option value="pms">Piedmontese (PMS)</option>
-                    <option value="lmo">Lombard (LMO)</option>
-                    <option value="lij">Ligurian (LIJ)</option>
-                    <option value="nap">Neapolitan (NAP)</option>
-                    <option value="fo">Faroese (FO)</option>
-                    <option value="gv">Manx (GV)</option>
-                    <option value="kw">Cornish (KW)</option>
-                </select>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
-        <div id="results" class="grid">
-            <!-- Codes will be rendered here -->
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 HTTP Status Codes Project. MIT Licensed.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+  <header class="hero"><div class="container">
+    <div class="eyebrow">IANA + vendor-aware reference</div><h1>HTTP Status Codes</h1>
+    <p class="lede">Search standard HTTP statuses and vendor-specific meanings without collapsing conflicting codes.</p>
+    <div class="controls" aria-label="Reference filters">
+      <div class="field field-search"><label for="search">Search</label><input id="search" type="search" autocomplete="off" placeholder="404, timeout, cloudflare…"></div>
+      <div class="field"><label for="type-filter">Type</label><select id="type-filter"><option value="">All types</option><option value="standard">Standard</option><option value="vendor">Vendor</option></select></div>
+      <div class="field"><label for="provider-filter">Provider</label><select id="provider-filter"><option value="">All providers</option></select></div>
+      <div class="field"><label for="status-filter">Lifecycle</label><select id="status-filter"><option value="">All states</option><option value="active">Active</option><option value="temporary">Temporary</option><option value="unused">Unused</option><option value="obsoleted">Obsoleted</option></select></div>
+      <div class="field"><label for="lang-select">Language</label><select id="lang-select"><option value="en">English</option></select></div>
+    </div>
+    <div class="meta-row"><span id="result-count" aria-live="polite">Loading…</span><span id="coverage-note"></span></div>
+  </div></header>
+  <main class="container"><section id="detail" class="detail" hidden aria-live="polite"></section><section id="results" class="grid" aria-label="HTTP status code results"></section><div id="empty" class="empty" hidden>No matching status codes.</div></main>
+  <footer><div class="container footer-row"><span>MIT Licensed</span><span>Standard entries track the pinned IANA registry snapshot.</span></div></footer>
+  <script src="/script.js"></script>
+</body></html>
