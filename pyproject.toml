@@ -5,12 +5,33 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "httpcode-reference"
 version = "2.0.0"
-description = "Verified standard and vendor-specific HTTP status code reference"
+description = "Verified IANA/RFC and vendor-specific HTTP status code reference with CLI, JSON, API and multilingual search"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = []
 dependencies = []
+keywords = ["http", "http-status-codes", "rest-api", "iana", "rfc", "cloudflare", "aws", "nginx", "developer-tools", "cli"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Software Development :: Libraries"
+]
+
+[project.urls]
+Homepage = "https://github.com/MrAlfak/httpCode"
+Repository = "https://github.com/MrAlfak/httpCode"
+Issues = "https://github.com/MrAlfak/httpCode/issues"
+Changelog = "https://github.com/MrAlfak/httpCode/blob/main/CHANGELOG.md"
 
 [project.scripts]
 httpcode = "httpcode:main"

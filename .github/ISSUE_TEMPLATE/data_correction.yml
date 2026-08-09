@@ -1,0 +1,39 @@
+name: Data / source correction
+description: Correct or add an HTTP status code using authoritative evidence.
+title: "[Data]: "
+labels: ["documentation"]
+body:
+  - type: input
+    id: code
+    attributes:
+      label: Status code
+      placeholder: "e.g. 530"
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Provider
+      description: Use IANA for standards, otherwise name the vendor/platform.
+      placeholder: "IANA, Cloudflare, AWS ALB, Nginx..."
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      placeholder: "Phrase, description, lifecycle, source, or missing entry"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source
+      placeholder: "Official IANA/RFC/vendor documentation URL"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      placeholder: "Why the current data is incomplete or incorrect"

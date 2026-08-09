@@ -1,7 +1,7 @@
 {
   "name": "github-httpcode",
-  "version": "1.0.0",
-  "description": "Verified standard and vendor-specific HTTP status code reference",
+  "version": "2.0.0",
+  "description": "Verified IANA/RFC and vendor-specific HTTP status code reference with CLI, JSON, API and multilingual web search",
   "scripts": {
     "dev": "node server.js",
     "build": "node build.js",
@@ -11,9 +11,12 @@
     "coverage:i18n": "python tools/i18n_coverage.py",
     "check:iana": "python tools/check_iana.py"
   },
-  "keywords": ["http", "status-codes", "iana", "cloudflare", "nginx", "aws"],
+  "keywords": ["http","http-status","http-status-codes","status-codes","rest","rest-api","api","iana","ietf","rfc","cloudflare","aws","nginx","laravel","developer-tools","cli"],
   "author": "",
   "license": "MIT",
+  "homepage": "https://github.com/MrAlfak/httpCode#readme",
+  "repository": {"type": "git", "url": "git+https://github.com/MrAlfak/httpCode.git"},
+  "bugs": {"url": "https://github.com/MrAlfak/httpCode/issues"},
   "engines": {"node": ">=18"},
   "devDependencies": {"express": "^4.21.2"}
 }

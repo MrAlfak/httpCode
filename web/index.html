@@ -3,14 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Verified standard and vendor-specific HTTP status code reference.">
-  <title>HTTP Status Codes — Verified Reference</title>
+  <meta name="app-base" content="">
+  <meta name="description" content="Search verified IANA/RFC HTTP status codes and vendor-specific responses from Cloudflare, AWS ALB, Nginx, Laravel, IIS and more.">
+  <meta name="keywords" content="HTTP status codes, HTTP errors, REST API, IANA, RFC, Cloudflare, AWS ALB, Nginx, Laravel, IIS, developer tools">
+  <meta name="author" content="MrAlfak">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b0d10">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="httpCode">
+  <meta property="og:title" content="HTTP Status Codes — Verified IANA + Vendor Reference">
+  <meta property="og:description" content="Search standard IANA/RFC codes and collision-safe vendor responses from Cloudflare, AWS, Nginx, Laravel, IIS and more.">
+  <meta property="og:url" content="https://mralfak.github.io/httpCode/">
+  <meta property="og:image" content="https://opengraph.githubassets.com/1/MrAlfak/httpCode">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP Status Codes — Verified Reference">
+  <meta name="twitter:description" content="IANA/RFC + vendor-specific HTTP status codes with search, CLI, API and multilingual data.">
+  <meta name="twitter:image" content="https://opengraph.githubassets.com/1/MrAlfak/httpCode">
+  <link rel="canonical" href="https://mralfak.github.io/httpCode/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <title>HTTP Status Codes — IANA, Cloudflare, AWS, Nginx & More</title>
   <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "httpCode",
+    "description": "Verified IANA/RFC and vendor-specific HTTP status code reference with CLI, JSON, API and multilingual web search.",
+    "codeRepository": "https://github.com/MrAlfak/httpCode",
+    "url": "https://mralfak.github.io/httpCode/",
+    "license": "https://opensource.org/license/mit",
+    "programmingLanguage": ["Python", "JavaScript"],
+    "keywords": "HTTP status codes, IANA, RFC, REST API, Cloudflare, AWS ALB, Nginx, Laravel, IIS",
+    "version": "2.0.0"
+  }
+  </script>
 </head>
 <body>
   <header class="hero"><div class="container">
-    <div class="eyebrow">IANA + vendor-aware reference</div><h1>HTTP Status Codes</h1>
-    <p class="lede">Search standard HTTP statuses and vendor-specific meanings without collapsing conflicting codes.</p>
+    <div class="hero-actions"><div class="eyebrow">IANA + vendor-aware reference</div><a class="github-link" href="https://github.com/MrAlfak/httpCode" target="_blank" rel="noopener noreferrer">★ Star on GitHub</a></div>
+    <h1>HTTP Status Codes</h1>
+    <p class="lede">Search standard HTTP statuses and vendor-specific meanings without collapsing conflicting codes. Built for API developers, debugging, documentation, SRE and tooling.</p>
     <div class="controls" aria-label="Reference filters">
       <div class="field field-search"><label for="search">Search</label><input id="search" type="search" autocomplete="off" placeholder="404, timeout, cloudflare…"></div>
       <div class="field"><label for="type-filter">Type</label><select id="type-filter"><option value="">All types</option><option value="standard">Standard</option><option value="vendor">Vendor</option></select></div>
@@ -21,6 +54,6 @@
     <div class="meta-row"><span id="result-count" aria-live="polite">Loading…</span><span id="coverage-note"></span></div>
   </div></header>
   <main class="container"><section id="detail" class="detail" hidden aria-live="polite"></section><section id="results" class="grid" aria-label="HTTP status code results"></section><div id="empty" class="empty" hidden>No matching status codes.</div></main>
-  <footer><div class="container footer-row"><span>MIT Licensed</span><span>Standard entries track the pinned IANA registry snapshot.</span></div></footer>
+  <footer><div class="container footer-row"><span>MIT Licensed · Verified HTTP reference</span><span><a href="https://github.com/MrAlfak/httpCode" target="_blank" rel="noopener noreferrer">GitHub</a> · Standard entries track the pinned IANA registry snapshot.</span></div></footer>
   <script src="/script.js"></script>
 </body></html>
