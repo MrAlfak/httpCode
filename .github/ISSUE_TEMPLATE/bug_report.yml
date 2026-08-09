@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible CLI, Web UI, API, build, or validation problem.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for helping improve httpCode. Please include enough detail to reproduce the problem."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the actual behavior and what you expected instead.
+      placeholder: "When I search for..., I expected..., but..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: "1. Run...\n2. Open...\n3. Search..."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "OS, Python/Node/browser version"
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      placeholder: "Logs, screenshots, related status code/provider, links"
