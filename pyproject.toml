@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "httpcode-reference"
+version = "2.0.0"
+description = "Verified standard and vendor-specific HTTP status code reference"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = []
+dependencies = []
+
+[project.scripts]
+httpcode = "httpcode:main"
+
+[tool.setuptools]
+py-modules = ["httpcode"]
+
+[tool.setuptools.data-files]
+"." = ["codes.json"]
+"i18n" = ["i18n/*.json"]

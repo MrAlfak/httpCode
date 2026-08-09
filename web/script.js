@@ -1,86 +1,19 @@
-let codes = [];
-let translations = {};
-const resultsEl = document.getElementById('results');
-const searchEl = document.getElementById('search');
-const langSelect = document.getElementById('lang-select');
-
-// List of RTL language codes
-const rtlLanguages = ['ar', 'fa', 'he', 'ur', 'ps', 'sd', 'ug', 'yi'];
-
-// Initial load
-async function init() {
-    try {
-        const response = await fetch('/codes.json');
-        codes = await response.json();
-        await loadTranslations('en'); // Default to English
-        render();
-    } catch (err) {
-        console.error('Failed to load codes:', err);
-    }
-}
-
-// Load translations for selected language
-async function loadTranslations(lang) {
-    try {
-        const response = await fetch(`/i18n/${lang}.json`);
-        translations = await response.json();
-    } catch (err) {
-        console.warn(`Could not load translations for ${lang}:`, err);
-        translations = {};
-    }
-    
-    // Update HTML lang and dir attributes
-    document.documentElement.lang = lang;
-    document.documentElement.dir = rtlLanguages.includes(lang) ? 'rtl' : 'ltr';
-}
-
-// Render the grid
-function render() {
-    const query = searchEl.value.toLowerCase();
-    
-    resultsEl.innerHTML = '';
-    
-    const filteredCodes = codes.filter(c => {
-        const codeStr = String(c.code);
-        const phrase = (translations[codeStr]?.phrase || c.phrase).toLowerCase();
-        const desc = (translations[codeStr]?.description || c.description).toLowerCase();
-        
-        return codeStr.includes(query) || phrase.includes(query) || desc.includes(query);
-    });
-
-    filteredCodes.forEach(c => {
-        const codeStr = String(c.code);
-        const phrase = translations[codeStr]?.phrase || c.phrase;
-        const desc = translations[codeStr]?.description || c.description;
-        const isRTL = document.documentElement.dir === 'rtl';
-        
-        const card = document.createElement('article');
-        card.className = 'card';
-        card.setAttribute('role', 'article');
-        card.setAttribute('aria-label', `HTTP ${c.code}: ${phrase}`);
-        
-        const badgeClass = `badge-${c.class.substring(0, 3)}`;
-        const arrow = isRTL ? '&larr;' : '&rarr;';
-        
-        card.innerHTML = `
-            <div class="code">
-                HTTP ${c.code}
-                <span class="badge ${badgeClass}">${c.class.split(' ')[0]}</span>
-            </div>
-            <h2 class="phrase">${phrase}</h2>
-            <p class="description">${desc}</p>
-            ${c.mdn_link ? `<a href="${c.mdn_link}" target="_blank" rel="noopener noreferrer" class="mdn-link">Read MDN Docs ${arrow}</a>` : ''}
-        `;
-        resultsEl.appendChild(card);
-    });
-}
-
-// Event Listeners
-searchEl.addEventListener('input', render);
-langSelect.addEventListener('change', async (e) => {
-    await loadTranslations(e.target.value);
-    render();
-});
-
-// Start the app
+let codes=[]; let translations={}; let languageRows=[];
+const rtlLanguages=new Set(['ar','fa','he','ur','ps','sd','ug','yi','ku']);
+const resultsEl=document.getElementById('results'), emptyEl=document.getElementById('empty'), detailEl=document.getElementById('detail'), searchEl=document.getElementById('search'), langSelect=document.getElementById('lang-select'), typeFilter=document.getElementById('type-filter'), providerFilter=document.getElementById('provider-filter'), statusFilter=document.getElementById('status-filter'), resultCount=document.getElementById('result-count'), coverageNote=document.getElementById('coverage-note');
+function t(item){const byId=translations[item.id]; const legacy=item.type==='standard'?translations[String(item.code)]:undefined; return byId||legacy||{};}
+function localized(item){const tr=t(item); return {...item,phrase:tr.phrase||item.phrase,description:tr.description||item.description};}
+function create(tag,className,text){const node=document.createElement(tag); if(className)node.className=className; if(text!==undefined)node.textContent=text; return node;}
+function permalink(item){return item.type==='standard'?`/status/${item.code}`:`/status/${encodeURIComponent(item.provider)}/${item.code}`;}
+function renderCard(raw){const item=localized(raw),card=create('article','card'); card.setAttribute('aria-label',`HTTP ${item.code}: ${item.phrase}`); const top=create('div','card-top'),code=create('a','code',`HTTP ${item.code}`),badge=create('span',`badge badge-${item.type}`,item.type==='standard'?'IANA':item.provider); code.href=permalink(item); top.append(code,badge); const facts=create('div','facts'); facts.append(create('span','fact',item.class),create('span',`fact status-${item.status}`,item.status)); const source=create('a','source-link','Source'); source.href=item.source.url; source.target='_blank'; source.rel='noopener noreferrer'; card.append(top,create('h2','phrase',item.phrase),create('p','description',item.description),facts,source); return card;}
+function filteredCodes(){const query=searchEl.value.trim().toLocaleLowerCase(); return codes.filter((raw)=>{const item=localized(raw); if(typeFilter.value&&item.type!==typeFilter.value)return false; if(providerFilter.value&&item.provider!==providerFilter.value)return false; if(statusFilter.value&&item.status!==statusFilter.value)return false; if(!query)return true; return [item.id,item.code,item.provider,item.phrase,item.description,item.class,item.status,item.reference||''].join(' ').toLocaleLowerCase().includes(query);});}
+function render(){const filtered=filteredCodes(); resultsEl.replaceChildren(...filtered.map(renderCard)); emptyEl.hidden=filtered.length!==0; resultCount.textContent=`${filtered.length} of ${codes.length} entries`;}
+function renderProviders(){for(const provider of [...new Set(codes.filter((item)=>item.type==='vendor').map((item)=>item.provider))].sort()){const option=create('option','',provider); option.value=provider; providerFilter.append(option);}}
+function renderCoverage(lang){const row=languageRows.find((x)=>x.lang===lang); coverageNote.textContent=row?`${row.standard_percent}% standard translation coverage`:'Translation coverage unavailable';}
+async function loadTranslations(lang){try{const response=await fetch(`/i18n/${encodeURIComponent(lang)}.json`); if(!response.ok)throw new Error(`HTTP ${response.status}`); translations=await response.json();}catch(error){console.warn(`Could not load ${lang} translations`,error); translations={};} document.documentElement.lang=lang; document.documentElement.dir=rtlLanguages.has(lang)?'rtl':'ltr'; localStorage.setItem('httpcode-lang',lang); renderCoverage(lang);}
+async function loadLanguages(){let rows=[]; try{const response=await fetch('/api/languages'); if(!response.ok)throw new Error('API unavailable'); rows=await response.json();}catch{try{const response=await fetch('/i18n/manifest.json'); if(response.ok)rows=await response.json();}catch{rows=[];}} languageRows=rows; if(!rows.length)return; langSelect.replaceChildren(); for(const row of rows){const option=create('option','',`${row.lang.toUpperCase()} — ${row.standard_percent}%`); option.value=row.lang; langSelect.append(option);}}
+function parseRoute(){const parts=location.pathname.split('/').filter(Boolean); if(parts[0]!=='status')return null; if(parts.length===2&&/^\d+$/.test(parts[1]))return{code:Number(parts[1]),provider:'iana'}; if(parts.length===3&&/^\d+$/.test(parts[2]))return{provider:decodeURIComponent(parts[1]),code:Number(parts[2])}; return null;}
+function renderDetail(){const route=parseRoute(); if(!route){detailEl.hidden=true; return;} const match=codes.find((item)=>item.code===route.code&&item.provider===route.provider); if(!match){detailEl.hidden=false; detailEl.replaceChildren(create('div','detail-kicker','Not found'),create('h2','',`No entry for ${route.provider}/${route.code}`)); return;} const item=localized(match),source=create('a','button-link','Open source'),back=create('a','button-link secondary','Back to all codes'),header=create('div','detail-header'); source.href=item.source.url; source.target='_blank'; source.rel='noopener noreferrer'; back.href='/'; header.append(create('div','detail-code',`HTTP ${item.code}`),create('span',`badge badge-${item.type}`,item.type==='standard'?'IANA':item.provider)); detailEl.replaceChildren(header,create('h2','detail-title',item.phrase),create('p','detail-description',item.description),create('p','detail-meta',`${item.class} · ${item.status}${item.reference?` · ${item.reference}`:''}`),source,back); detailEl.hidden=false;}
+function bind(){[searchEl,typeFilter,providerFilter,statusFilter].forEach((el)=>el.addEventListener(el===searchEl?'input':'change',render)); langSelect.addEventListener('change',async(event)=>{await loadTranslations(event.target.value); render(); renderDetail();});}
+async function init(){try{const response=await fetch('/codes.json'); if(!response.ok)throw new Error(`HTTP ${response.status}`); codes=await response.json();}catch(error){resultCount.textContent='Failed to load dataset'; console.error(error); return;} renderProviders(); await loadLanguages(); const saved=localStorage.getItem('httpcode-lang'),available=[...langSelect.options].map((option)=>option.value),preferred=saved&&available.includes(saved)?saved:(available.includes('en')?'en':available[0]); if(preferred){langSelect.value=preferred; await loadTranslations(preferred);} bind(); render(); renderDetail();}
 init();
