@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HTTP Code Entry",
+  "type": "object",
+  "required": ["id", "code", "type", "phrase"],
+  "properties": {
+    "id": {"type": "string"},
+    "code": {"type": "integer", "minimum": 100, "maximum": 999},
+    "type": {"enum": ["standard", "vendor"]},
+    "provider": {"type": "string"},
+    "phrase": {"type": "string"},
+    "description": {"type": "string"},
+    "status": {"enum": ["active", "temporary", "unused", "obsoleted", "unassigned"]},
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "url": {"type": "string"}
+      }
+    }
+  }
+}
