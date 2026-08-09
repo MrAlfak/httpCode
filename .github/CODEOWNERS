@@ -1,0 +1,11 @@
+# Default review owner for this repository.
+* @MrAlfak
+
+# Data and source-of-truth changes.
+/data/ @MrAlfak
+/schema/ @MrAlfak
+/tools/ @MrAlfak
+
+# Public web explorer and deployment workflows.
+/web/ @MrAlfak
+/.github/workflows/ @MrAlfak
