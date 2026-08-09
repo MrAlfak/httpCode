@@ -18,5 +18,5 @@
   "repository": {"type": "git", "url": "git+https://github.com/MrAlfak/httpCode.git"},
   "bugs": {"url": "https://github.com/MrAlfak/httpCode/issues"},
   "engines": {"node": ">=18"},
-  "devDependencies": {"express": "^4.21.2"}
+  "devDependencies": {"express": "^5.2.1"}
 }
